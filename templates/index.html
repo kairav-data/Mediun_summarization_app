@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>URL Summarizer</h1>
+            <form method="post">
+                <label for="url">Enter URL:</label>
+                <input type="url" id="url" name="url" required>
+                <button type="submit">Summarize</button>
+            </form>
+        </div>
+        <div class="summary-container">
+            <div class="summary-box">
+                {% if summary %}
+                    <h2>Summary:</h2>
+                    <p>{{ summary }}</p>
+                {% else %}
+                    <h2>Summary will appear here</h2>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
